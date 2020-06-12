@@ -180,16 +180,17 @@ class BookList extends Component {
                             <div class="input-field">
                                 <select id="category" onChange={this.handleChange}>
                                 <option value="" disabled selected>Choose Category</option> 
-                                <option value="Fantasy">Fantasy</option>
+                                <option value="Art & Photography">Art & Photography</option>
+                                <option value="Biography">Biography</option>
+                                <option value="Children's Books">Children's Books</option>
+                                <option value="Crafts & Hobbies">Crafts & Hobbies</option>
+                                <option value="Crime & Thriller">Crime & Thriller</option>
                                 <option value="Fiction">Fiction</option>
-                                <option value="Romance">Romance</option>
-                                <option value="Thriller">Thriller</option>
-                                <option value="Mystery">Mystery</option>
-                                <option value="Horror">Horror</option>
-                                <option value="Classic">Classic</option>
-                                <option value="Comics">Comics</option>
-                                <option value="Humor">Humor</option>
-                                <option value="Self-help">Self-help</option>
+                                <option value="Food & Drink">Food & Drink</option>
+                                <option value="Graphic Novels, Anime & Manga">Graphic Novels, Anime & Manga</option>
+                                <option value="History & Archaeology">History & Archaeology</option>
+                                <option value="Mind, Body & Spirit">Mind, Body & Spirit</option>
+                                <option value="Science Fiction, Fantasy & Horror">Science Fiction, Fantasy & Horror</option>
                                 </select>
                             </div>
 
