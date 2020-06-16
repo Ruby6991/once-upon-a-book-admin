@@ -2,6 +2,7 @@ import React from 'react'
 import { Component } from 'react'
 import M from "materialize-css";
 import { Redirect } from "react-router-dom";
+import Moment from 'react-moment';
 const axios = require("axios")
 
 class UserDetails extends Component{
@@ -12,7 +13,7 @@ class UserDetails extends Component{
             firstName:this.props.user.firstName,
             lastName:this.props.user.lastName,
             dateOfBirth:this.props.user.dateOfBirth,
-            addresses:this.props.user.addresses,
+            address:this.props.user.address,
             phoneNo:this.props.user.phoneNo,
             role:this.props.user.role,
             orders:this.props.user.orders
@@ -80,10 +81,9 @@ class UserDetails extends Component{
                 </td>
                 <td>{this.state.firstName+' '+this.state.lastName}</td>
                 <td class="teal lighten-4">{this.state.phoneNo}</td>
-                <td>{this.state.dateOfBirth!==null?(this.state.dateOfBirth.split('T')[0]):("N/A")}</td>
+                <td>{this.state.dateOfBirth!==null?(<Moment format="YYYY/MM/DD">{this.state.dateOfBirth}</Moment>):("N/A")}</td>
                 <td class="teal lighten-4 center">{this.state.role} </td>
-                <td>{this.state.addresses!==null?(this.state.addresses):("N/A")}</td>
-                <td class="teal lighten-4">{this.state.orders!==null?(this.state.orders):("N/A")}</td>
+                <td>{this.state.address!==null?(this.state.address):("N/A")}</td>
             
             </tr>
         )

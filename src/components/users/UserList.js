@@ -185,7 +185,6 @@ class UserList extends Component {
                                         <th class="teal lighten-3">Date of Birth</th>
                                         <th class=" teal lighten-4">Role</th>
                                         <th class=" teal lighten-3">Address</th>
-                                        <th class="teal lighten-4">Orders</th>
                                     </tr>
                                     </thead>
 
