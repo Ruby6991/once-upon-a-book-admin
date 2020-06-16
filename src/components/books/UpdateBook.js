@@ -24,6 +24,7 @@ class UpdateBook extends Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.handleBack = this.handleBack.bind(this);
     }
 
     componentDidMount(){
@@ -102,6 +103,12 @@ class UpdateBook extends Component {
          })
     }
 
+    handleBack = (e) => {
+        this.setState({
+            isUpdated:true
+        })
+    }
+
     render() {
         return (
             <div class="update-book">
@@ -145,7 +152,8 @@ class UpdateBook extends Component {
                                         </tbody>
                                     </table>
                                     <br/>
-                                <button class="waves-effect waves-light btn-small red lighten-2" type="button" onClick={this.handleSubmit}>Update Book</button>
+                                <button style={{marginRight:30+'px'}} class="waves-effect waves-light btn-small red lighten-2" type="button" onClick={this.handleSubmit}>Update Book</button>
+                                <button class="waves-effect waves-light btn-small red lighten-2" onClick={this.handleBack}>Go Back</button>
                             </form>
                         </div>   
                     </div>
