@@ -7,6 +7,7 @@ import UserList from './components/users/UserList';
 import OrderList from './components/orders/OrderList'
 import UpdateBook from './components/books/UpdateBook';
 import Dashboard from './components/layout/Dashboard';
+import UpdateOrder from './components/orders/UpdateOrder'
 
 class App extends Component {
   render(){
@@ -21,6 +22,7 @@ class App extends Component {
             <Route exact path='/updateBook' component={UpdateBook}/>
             <Route exact path='/userlist' component={UserList}/>
             <Route exact path='/orderlist' component={OrderList}/>
+            <Route exact path='/updateOrder' component={UpdateOrder}/>
           </Switch>
         </div>
       </BrowserRouter>

@@ -16,13 +16,12 @@ class BookDetails extends Component {
             totalAmount:this.props.order.totalAmount,
             paymentMethod:this.props.order.paymentMethod,
             user:this.props.order.user,
-            address:this.props.order.address,
+            address:this.props.order.user.address,
             orderedBooks:this.props.order.orderedBooks,
             updateOrder:false,
             orders:[]
         }
         console.log(props);
-        this.handleDelete = this.handleDelete.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
     }
 
@@ -38,9 +37,13 @@ class BookDetails extends Component {
             let pDate = new Date(purchase[0]);
             pDate.setDate(pDate.getDate()+1);
 
-            let delivery=this.state.deliveryDate.toString().split("T");
-            let dDate = new Date(delivery[0]);
-            dDate.setDate(dDate.getDate()+1);
+            let dDate=null;
+            if(this.state.deliveryDate!=null){
+                let delivery=this.state.deliveryDate.toString().split("T");
+                dDate = new Date(delivery[0]);
+                dDate.setDate(dDate.getDate()+1);
+            }
+            
 
             this.setState({
                 purchasedDate:pDate,
@@ -77,7 +80,9 @@ class BookDetails extends Component {
                 <td class="teal lighten-4 center">
                 <Moment format="YYYY/MM/DD">{this.state.purchasedDate}</Moment>
                 </td>
-                <td class="center"><Moment format="YYYY/MM/DD">{this.state.deliveryDate}</Moment></td>
+                <td class="center">{this.state.deliveryDate!=null?(
+                    <Moment format="YYYY/MM/DD">{this.state.deliveryDate}</Moment>
+                    ):("N/A")}</td>
                 <td class="teal lighten-4 center">
                     {this.state.status}
                 </td>
@@ -90,13 +95,10 @@ class BookDetails extends Component {
                 <td >
                     <b>User ID: </b>{this.state.user.email}
                     <br/><b>Full Name: </b>{this.state.user.firstName + this.state.user.lastName}
-                    <br/><b>Phone Number: </b>{this.state.user.phoneNumber}
+                    <br/><b>Phone Number: </b>{this.state.user.phoneNo}
                 </td>
                 <td class="teal lighten-4 center">
                     {this.state.address}
-                </td>
-                <td >
-                    {this.state.orderedBooks}
                 </td>
             </tr>
         )

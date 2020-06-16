@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Redirect } from "react-router-dom";
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
+import M from 'materialize-css'
+import Moment from 'react-moment';
 const axios = require("axios")
 
 class UpdateBook extends Component {
@@ -21,9 +23,13 @@ class UpdateBook extends Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.handleBack = this.handleBack.bind(this);
     }
 
     componentDidMount(){
+        const select = document.querySelectorAll('select');
+        M.FormSelect.init(select, {});
+
         const that = this;
 
         const token = 'Bearer '+ localStorage.token;
@@ -45,7 +51,7 @@ class UpdateBook extends Component {
                     totalAmount:res.data.totalAmount,
                     paymentMethod:res.data.paymentMethod,
                     user:res.data.user,
-                    address:res.data.address,
+                    address:res.data.user.address,
                     orderedBooks:res.data.orderedBooks
                 })
                 console.log("Book Data Received!");
@@ -84,7 +90,7 @@ class UpdateBook extends Component {
         }
         console.log(data);
 
-        axios.put("http://localhost:8080/UpdateBook/"+ this.state.id,data,config)
+        axios.put("http://localhost:8080/UpdateOrder/"+ this.state.id,data,config)
             .then(function(res){
                 console.log("Order updated successfully!");
                 alert("Order updated successfully!");
@@ -95,6 +101,12 @@ class UpdateBook extends Component {
                 console.log("Order update un-successful!\nError : ",error.response);
                 alert("Order update un-successful!");
          })
+    }
+
+    handleBack = (e) => {
+        this.setState({
+            isUpdated:true
+        })
     }
 
     render() {
@@ -114,12 +126,12 @@ class UpdateBook extends Component {
                                         <tbody>
                                         <tr>
                                             <th>Purchased Date</th>
-                                            <td>{this.state.purchasedDate}</td>
+                                            <td><Moment format="YYYY/MM/DD">{this.state.purchasedDate}</Moment></td>
                                         </tr>
                                         <tr>
                                             <th>User Details</th>
-                                            <td><b>Full Name: </b>{this.state.user.firstName + this.state.user.lastName}
-                                                <br/><b>Phone Number: </b>{this.state.user.phoneNumber}</td>
+                                            <td><b>Full Name: </b>{this.state.user.firstName +" "+this.state.user.lastName}
+                                                <br/><b>Phone Number: </b>{this.state.user.phoneNo}</td>
                                         </tr>
                                         <tr>
                                             <th>Address</th>
@@ -131,7 +143,20 @@ class UpdateBook extends Component {
                                         </tr>
                                         <tr>
                                             <th>Ordered Books</th>
-                                            <td>{this.state.orderedBooks}</td>
+                                            <td>
+                                                {
+                                                    this.state.orderedBooks && this.state.orderedBooks.map(orderedBook => 
+                                                    {
+                                                        return(
+                                                            <div>
+                                                                <b>Book Title: </b>{orderedBook.book.title}
+                                                                <br/><b>Quantity: </b>{orderedBook.quantity}
+                                                            </div>
+                                                        )
+                                                        
+                                                    })
+                                                }
+                                            </td>
                                         </tr>
                                         <tr>
                                             <th>Delivery Date</th>
@@ -154,7 +179,8 @@ class UpdateBook extends Component {
                                         </tbody>
                                     </table>
                                     <br/>
-                                <button class="waves-effect waves-light btn-small red lighten-2" type="button" onClick={this.handleSubmit}>Update Order</button>
+                                <button style={{marginRight:30+'px'}} class="waves-effect waves-light btn-small red lighten-2" type="button" onClick={this.handleSubmit}>Update Order</button>
+                                <button class="waves-effect waves-light btn-small red lighten-2" onClick={this.handleBack}>Go Back</button>
                             </form>
                         </div>   
                     </div>

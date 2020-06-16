@@ -136,7 +136,6 @@ class OrderList extends Component {
                                             <th class="teal lighten-4" >Payment Method</th>
                                             <th class="teal lighten-4" >User</th>
                                             <th class="teal lighten-4" >Address</th>
-                                            <th class="teal lighten-4" >Ordered Books</th>
                                         </tr>
                                     </thead>
 
@@ -144,9 +143,11 @@ class OrderList extends Component {
                                         {this.state.view?(
                                             this.state.orders && this.state.orders.map(order => 
                                         {
-                                            return(
+                                            if(order.status!=='Pending'){
+                                                return(
                                                 <OrderDetails order={order} key={order.id} />
-                                            )
+                                                )
+                                            }
                                         })
                                         ):(
                                             <OrderDetails order={this.state.searchResult} key={this.state.searchResult.id} /> 

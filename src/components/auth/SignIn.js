@@ -34,7 +34,7 @@ class SignIn extends Component {
             console.log(data)
             localStorage.setItem("token",data.jwtToken);
             localStorage.setItem("email",that.state.email);
-            localStorage.setItem("firstName",data.firstName);
+            localStorage.setItem("name",data.firstName);
             that.setState({
                 role:data.role,
                 redirectToHome:true
