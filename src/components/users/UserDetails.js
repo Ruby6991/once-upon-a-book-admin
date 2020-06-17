@@ -76,14 +76,14 @@ class UserDetails extends Component{
     render(){
         return (
             <tr>
-                <td class="teal lighten-4"><i><b>{this.state.email}</b></i><br/><br/>
+                <td ><i><b>{this.state.email}</b></i><br/><br/>
                 <button class="waves-effect waves-light btn-small red lighten-2" onClick={this.handleDelete}>Delete</button>
                 </td>
-                <td>{this.state.firstName+' '+this.state.lastName}</td>
-                <td class="teal lighten-4">{this.state.phoneNo}</td>
-                <td>{this.state.dateOfBirth!==null?(<Moment format="YYYY/MM/DD">{this.state.dateOfBirth}</Moment>):("N/A")}</td>
-                <td class="teal lighten-4 center">{this.state.role} </td>
-                <td>{this.state.address!==null?(this.state.address):("N/A")}</td>
+                <td class=" blue-grey darken-1 white-text">{this.state.firstName+' '+this.state.lastName}</td>
+                <td>{this.state.phoneNo}</td>
+                <td class=" blue-grey darken-1 white-text">{this.state.dateOfBirth!==null?(<Moment format="YYYY/MM/DD">{this.state.dateOfBirth}</Moment>):("N/A")}</td>
+                <td>{this.state.role} </td>
+                <td class=" blue-grey darken-1 white-text">{this.state.address!==null?(this.state.address):("N/A")}</td>
             
             </tr>
         )

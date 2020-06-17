@@ -132,8 +132,8 @@ class UserList extends Component {
                    ):("")
                 }
                 <div class="right-align">
-                    <button style={{marginRight:30+'px'}} data-target="modal1" class="modal-trigger waves-effect btn-flat teal lighten-3 white-text center btn-large"> Add New User </button>
-                    <button class="waves-effect btn-flat teal lighten-3 white-text center btn-large" onClick={this.signOut}>Logout </button>
+                    <button style={{marginRight:30+'px'}} data-target="modal1" class="modal-trigger waves-effect btn-flat blue-grey darken-1 white-text center btn-large"> Add New User </button>
+                    <button class="waves-effect btn-flat blue-grey darken-1 white-text center btn-large" onClick={this.signOut}>Logout </button>
                 </div>
                 {/* <!-- Modal1 Structure --> */}
                 <div id="modal1" class="modal">
@@ -164,7 +164,7 @@ class UserList extends Component {
                 <nav>
                     <div class="nav-wrapper">
                         <form>
-                            <div class="input-field teal lighten-3">
+                            <div class="input-field blue-grey darken-1">
                             <input id="search" type="search" onChange={this.handleSearch} required/>
                             <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                             <i class="material-icons" onClick={this.handleClose}>close</i>
@@ -179,12 +179,12 @@ class UserList extends Component {
                                 <table class="responsive-table highlight">
                                     <thead>
                                     <tr>
-                                        <th class="teal lighten-4">User ID</th>
-                                        <th class=" teal lighten-3">Full Name</th>
-                                        <th class="teal lighten-4">Phone Number</th>
-                                        <th class="teal lighten-3">Date of Birth</th>
-                                        <th class=" teal lighten-4">Role</th>
-                                        <th class=" teal lighten-3">Address</th>
+                                        <th class="blue-grey darken-2 white-text">User ID</th>
+                                        <th class=" blue-grey darken-1 white-text">Full Name</th>
+                                        <th class="blue-grey darken-2 white-text">Phone Number</th>
+                                        <th class="blue-grey darken-1 white-text">Date of Birth</th>
+                                        <th class=" blue-grey darken-2 white-text">Role</th>
+                                        <th class=" blue-grey darken-1 white-text">Address</th>
                                     </tr>
                                     </thead>
 

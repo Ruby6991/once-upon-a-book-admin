@@ -108,19 +108,19 @@ class BookDetails extends Component {
                     <button class="waves-effect waves-light btn-small red lighten-2" onClick={this.handleUpdate}>Update</button><br/><br/>
                     <button class="waves-effect waves-light btn-small red lighten-2" onClick={this.handleDelete}>Delete</button>
                 </td>
-                <td class="teal lighten-4 center">
+                <td class="blue-grey darken-2 white-text center">
                     <b>{this.props.book.title}</b><br/><br/>
                     {this.state.description}
                 </td>
                 <td class="center">{this.props.book.category}</td>
-                <td class="teal lighten-4 center">
+                <td class="blue-grey darken-2 white-text center">
                 US${this.state.price}
                 </td>
                 <td>
                     <img class="responsive-img" src={this.state.imagePath} alt=""/><br/>
                 </td>
                 
-                <td class="teal lighten-4"><b>Author: </b>{this.props.book.author}
+                <td class="blue-grey darken-2 white-text"><b>Author: </b>{this.props.book.author}
                 <br/><b>Format: </b>{this.state.format}
                 <br/><b>Publisher: </b>{this.state.publisher}
                 <br/><b>Publication Date: </b>

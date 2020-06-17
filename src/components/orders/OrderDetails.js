@@ -77,19 +77,19 @@ class BookDetails extends Component {
                     <i><b>{this.state.id}</b></i><br/><br/>
                     <button class="waves-effect waves-light btn-small red lighten-2" onClick={this.handleUpdate}>Update</button><br/><br/>
                 </td>
-                <td class="teal lighten-4 center">
+                <td class="blue-grey darken-2 white-text center">
                 <Moment format="YYYY/MM/DD">{this.state.purchasedDate}</Moment>
                 </td>
                 <td class="center">{this.state.deliveryDate!=null?(
                     <Moment format="YYYY/MM/DD">{this.state.deliveryDate}</Moment>
                     ):("N/A")}</td>
-                <td class="teal lighten-4 center">
+                <td class="blue-grey darken-2 white-text center">
                     {this.state.status}
                 </td>
                 <td>
                     US${this.state.totalAmount}
                 </td>
-                <td class="teal lighten-4 center">
+                <td class="blue-grey darken-2 white-text center">
                     {this.state.paymentMethod}
                 </td>
                 <td >
@@ -97,7 +97,7 @@ class BookDetails extends Component {
                     <br/><b>Full Name: </b>{this.state.user.firstName + this.state.user.lastName}
                     <br/><b>Phone Number: </b>{this.state.user.phoneNo}
                 </td>
-                <td class="teal lighten-4 center">
+                <td class="blue-grey darken-2 white-text center">
                     {this.state.address}
                 </td>
             </tr>

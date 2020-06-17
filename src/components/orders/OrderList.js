@@ -106,13 +106,13 @@ class OrderList extends Component {
                 }
                 <div class="right-align">
                     {/* <button style={{marginRight:30+'px'}} data-target="modal1" class="modal-trigger waves-effect btn-flat teal lighten-3 white-text center btn-large"> Add New Book </button> */}
-                    <button class="waves-effect btn-flat teal lighten-3 white-text center btn-large" onClick={this.signOut}>Logout </button>
+                    <button class="waves-effect btn-flat blue-grey darken-1 white-text center btn-large" onClick={this.signOut}>Logout </button>
                 </div>
             <h2 class="center">Manage Orders</h2>
             <nav>
                     <div class="nav-wrapper">
                         <form>
-                            <div class="input-field teal lighten-3">
+                            <div class="input-field blue-grey darken-1">
                             <input id="search" type="search" required onChange={this.handleSearch}/>
                             <label class="label-icon" for="search" ><i class="material-icons">search</i></label>
                             <i class="material-icons" onClick={this.handleClose}>close</i>
@@ -127,15 +127,14 @@ class OrderList extends Component {
                                 <table class="responsive-table highlight">
                                     <thead>
                                         <tr>
-                                            <th class="teal lighten-3">Order ID</th>
-                                            <th class=" teal lighten-4">Purchased Date</th>
-                                            <th class=" teal lighten-3">Delivery Date</th>
-                                            {/* <th class="teal lighten-4"style={{width: 100+"px"}}>Price</th> */}
-                                            <th class=" teal lighten-3" >Order Status</th>
-                                            <th class="teal lighten-4" >Total Amount</th>
-                                            <th class="teal lighten-4" >Payment Method</th>
-                                            <th class="teal lighten-4" >User</th>
-                                            <th class="teal lighten-4" >Address</th>
+                                            <th class="blue-grey darken-1 white-text">Order ID</th>
+                                            <th class=" blue-grey darken-2 white-text">Purchased Date</th>
+                                            <th class=" blue-grey darken-1 white-text">Delivery Date</th>
+                                            <th class=" blue-grey darken-2 white-text" >Order Status</th>
+                                            <th class="blue-grey darken-1 white-text" >Total Amount</th>
+                                            <th class="blue-grey darken-2 white-text" >Payment Method</th>
+                                            <th class="blue-grey darken-1 white-text" >User</th>
+                                            <th class="blue-grey darken-2 white-text" >Address</th>
                                         </tr>
                                     </thead>
 

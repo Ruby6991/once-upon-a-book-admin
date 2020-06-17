@@ -160,8 +160,8 @@ class BookList extends Component {
                    ):("")
                 }
                 <div class="right-align">
-                    <button style={{marginRight:30+'px'}} data-target="modal1" class="modal-trigger waves-effect btn-flat teal lighten-3 white-text center btn-large"> Add New Book </button>
-                    <button class="waves-effect btn-flat teal lighten-3 white-text center btn-large" onClick={this.signOut}>Logout </button>
+                    <button style={{marginRight:30+'px'}} data-target="modal1" class="modal-trigger waves-effect btn-flat blue-grey darken-1 white-text center btn-large"> Add New Book </button>
+                    <button class="waves-effect btn-flat blue-grey darken-1 white-text center btn-large" onClick={this.signOut}>Logout </button>
                 </div>
                 {/* <!-- Modal1 Structure --> */}
                 <div id="modal1" class="modal">
@@ -216,7 +216,7 @@ class BookList extends Component {
             <nav>
                     <div class="nav-wrapper">
                         <form>
-                            <div class="input-field teal lighten-3">
+                            <div class="input-field blue-grey darken-1">
                             <input id="search" type="search" required onChange={this.handleSearch}/>
                             <label class="label-icon" for="search" ><i class="material-icons">search</i></label>
                             <i class="material-icons" onClick={this.handleClose}>close</i>
@@ -231,12 +231,12 @@ class BookList extends Component {
                                 <table class="responsive-table highlight">
                                     <thead>
                                         <tr>
-                                            <th class="teal lighten-3">Book ID</th>
-                                            <th class=" teal lighten-4">Title & Description</th>
-                                            <th class=" teal lighten-3">Category</th>
-                                            <th class="teal lighten-4"style={{width: 100+"px"}}>Price</th>
-                                            <th class=" teal lighten-3" style={{width: 200+"px"}} >Image</th>
-                                            <th class="teal lighten-4" style={{width: 200+"px"}}>Additional Information</th>
+                                            <th class="blue-grey darken-1 white-text">Book ID</th>
+                                            <th class=" blue-grey darken-2 white-text">Title & Description</th>
+                                            <th class=" blue-grey darken-1 white-text">Category</th>
+                                            <th class="blue-grey darken-2 white-text"style={{width: 100+"px"}}>Price</th>
+                                            <th class=" blue-grey darken-1 white-text" style={{width: 200+"px"}} >Image</th>
+                                            <th class="blue-grey darken-2 white-text" style={{width: 200+"px"}}>Additional Information</th>
                                         </tr>
                                     </thead>
 
